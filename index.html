@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropical Travel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div id="preloader" class="preload">
+        <div class="preload-content">
+            <span class="close">&times;</span>
+            <img src="images/logo_tropical_travel2.png" alt="">
+            <p class="eslogan">Descubre el mundo con nosotros</p>
+            <p class="preload-text">
+                Embárcate en una aventura inolvidable con Tropical Travel. Ofrecemos paquetes personalizados, guías
+                expertos y experiencias únicas para disfrutar de la belleza y diversidad del planeta. Relájate en playas
+                paradisíacas, explora selvas tropicales o descubre culturas vibrantes; hacemos de tu viaje una
+                experiencia inolvidable.</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="sidebar-container">
+            <div class="side-logo">
+                <h1>Tropical Travel</h1>
+            </div>
+            <div class="side-links">
+                <a href="#"><i class='bx bx-map'></i> Paquetes Turisticos</a>
+                <a href="#"><i class='bx bx-globe'></i> Destinos Turisticos</a>
+                <a href="#"><i class='bx bx-info-circle'></i> Acerca de</a>
+                <a href="#"><i class='bx bx-envelope'></i> Contacto</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo" data-aos="fade-right" data-aos-duration="1000">
+                <img class="logo1" src="images/logo_tropical_travel.png" alt="">
+            </div>
+
+            <nav class="navbar" data-aos="fade-left" data-aos-duration="1000">
+                <ul>
+                    <li><a class="option paquetes" href="">Paquetes Turisticos</a></li>
+                    <li><a class="option destinos" href="">Destinos Turisticos</a></li>
+                    <li><a class="option acerca" href="">Acerca de</a></li>
+                    <li><a class="option contacto" href="">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-btn"><i class="fa-solid fa-bars menu"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="background">
+            <div class="carousel_background">
+                <div class="carousel-slide">
+                    <img src="images/imagen1.jpg" alt="">
+                    <img src="images/imagen3.jpeg" alt="">
+                    <img src="images/imagen4.jpeg" alt="">
+                    <img src="images/imagen5.jpeg" alt="">
+                    <img src="images/imagen6.jpeg" alt="">
+                </div>
+                <div class="text-buttons">
+                    <button class="previous" onclick="moveSlider(-1)">&#10094;</button>
+                    <button class="next_image" onclick="moveSlider(1)">&#10095;</button>
+                </div>
+            </div>
+            <div class="text-content">
+                <h1>Descubre el mundo con nosotros</h1>
+                <p>Escoge el mejor plan para ti o contactanos para mayor informacion</p>
+                <div class="explore-contact">
+                    <a href="https://wa.me/+51955638001" class="explore">Explora nuestros destinos</a>
+                    <a href="https://wa.me/+51955638001" class="contact_us">Contactanos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="basic-packs">
+            <div class="carousel">
+                <div class="carousel-title" data-aos="zoom-in" data-aos-duration="1000">
+                    <h3>Paquetes Turisticos</h3>
+                    <span><i class='bx bxs-plane-alt'></i> Descubre todos nuestros paquetes turisticos <i
+                            class='bx bxs-plane-alt'></i></span>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1000" class="carousel-images" id="carousel-images">
+                    <!-- Las imágenes se cargarán dinámicamente aquí -->
+                </div>
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="1000">
+                <a class="more-packs" href="https://wa.me/+51955638001">Ver mas paquetes<i style="font-size: 1.4em;"
+                        class='bx bx-chevron-down'></i></a>
+            </div>
+            <div class="control-buttons">
+                <div class="controls-select">
+                    <input type="file" id="image-file" accept="image/*" onchange="showFileName()">
+                    <label for="image-file">Seleccionar Archivo</label>
+                    <span id="file-name">Ningún archivo seleccionado</span>
+                </div>
+                <div class="add-delete">
+                    <button class="add-image" onclick="addImage()">Agregar Imagen</button>
+                    <button class="del-image" onclick="removeImage()">Eliminar Imagen</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="about">
+            <div class="about-container">
+                <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
+                    <h4>Acerca de Tropical Travel</h4>
+                    <p><span style="font-weight: bold;">Somos una agencia de viajes creada en 1999.</span> Con personal
+                        altamente calificado
+                        con mas de <span style="font-weight: bold;">35 años de experiencia ininterrumpida en el mercado
+                            turistico,</span> contamos con la mejor
+                        tecnologia, innovadora, brindamos asistencia personalizada y servicios en todo el mundo.
+                    </p>
+                    <a class="read-more" href="https://wa.me/+51955638001">Leer Mas...</a>
+                </div>
+                <div class="about-images" data-aos="fade-left" data-aos-duration="1000">
+                    <img class="serv-img1" src="images/img2.jpg" alt="">
+                    <img class="serv-img3" src="images/img4.jpg" alt="">
+                    <img class="serv-img2" src="images/img3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="services">
+            <div class="services-container">
+                <div class="serv-description" data-aos="zoom-in" data-aos-duration="1000">
+                    <h4>Nuestros Servicios</h4>
+                    <p>Venta de pasajes <span>Aero Nacionales e Internacionales</span>, programas turisticos
+                        alaborados al gusto del cliente, cruceros, alquiler de autos, seguros de viajes en todo el mundo
+                    </p>
+                </div>
+
+                <div class="serv-list">
+                    <div class="serv-card euro" data-aos="fade-right" data-aos-duration="1000">
+                        <p>Europa</p>
+                        <img src="images/europa-img1.avif" alt="">
+                        <div class="serv-hide">
+                            <button class="open-euro-modal">Ver mas<i style="font-weight: 900;"
+                                    class='bx bx-show'></i></button>
+                        </div>
+                        <div id="euro-modal" class="modal euro-modal">
+                            <div class="modal-content">
+                                <button class="close-euro-btn"><i class='bx bxs-x-circle'></i></button>
+                                <div class="carrusel">
+                                    <div class="carousel-item coliseum">
+                                        <div class="modal-carousel-text">
+                                            <h1>Marbella</h1>
+                                            <span>¡Descubre Marbella con nuestro exclusivo paquete turístico. Disfruta
+                                                de sus playas doradas, vibrante vida nocturna y exquisita gastronomía.
+                                                Pasea por el encantador casco antiguo y visita el lujoso Puerto Banús.
+                                                Marbella te ofrece lujo y belleza natural en cada rincón. ¡Reserva ahora
+                                                y vive una escapada mágica!
+                                            </span>
+                                        </div>
+                                        <img src="images/europa-img.jpg" alt="El Coliseo Romano">
+                                    </div>
+
+                                    <div class="carousel-item tower">
+                                        <div class="modal-carousel-text">
+                                            <h1>Torre Rogelio</h1>
+                                            <span>¡Visita la impresionante Torre Rogelio! Admira su arquitectura única y
+                                                disfruta de las vistas panorámicas más espectaculares. Este emblemático
+                                                monumento te espera con
+                                                su historia fascinante y su imponente presencia. No pierdas la
+                                                oportunidad de explorar la Torre
+                                                Rogelio y descubrir todos sus secretos. ¡Haz de tu visita una
+                                                experiencia inolvidable! ¡Te esperamos!</span>
+                                        </div>
+                                        <img src="images/europa-img2.jpg" alt="Torre Rogelio">
+                                    </div>
+
+                                    <div class="carousel-item spa">
+                                        <div class="modal-carousel-text">
+                                            <h1>Balneario de Antalya</h1>
+                                            <span>¡Disfruta de un paraíso en el Balneario Turco Antalya! Sumérgete en
+                                                sus aguas cristalinas y relájate en playas de ensueño. Este destino
+                                                único te ofrece una mezcla
+                                                perfecta de belleza natural y lujo. Explora su rica historia, saborea la
+                                                deliciosa gastronomía local y
+                                                disfruta de una estancia inolvidable. ¡Ven al Balneario Turco Antalya y
+                                                vive unas vacaciones de
+                                                ensueño! ¡Te esperamos!</span>
+                                        </div>
+                                        <img src="images/europa-img3.jpg" alt="Balneario de Antalya">
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="prev-btn">&#10094; Anterior</button>
+                                    <button class="next-btn">Siguiente &#10095;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="serv-card asia" data-aos="fade-right" data-aos-duration="1000">
+                        <p>Asia</p>
+                        <img src="images/asia-img.jpg" alt="">
+                        <div class="serv-hide">
+                            <button class="open-asia-modal">Ver mas<i style="font-weight: 900;"
+                                    class='bx bx-show'></i></button>
+                        </div>
+                        <div id="asia-modal" class="modal asia-modal">
+                            <div class="modal-content">
+                                <button class="close-asia-btn"><i class='bx bxs-x-circle'></i></button>
+                                <div class="carrusel">
+                                    <div class="carousel-item dubai">
+                                        <div class="modal-carousel-text">
+                                            <h1>Dubai</h1>
+                                            <span>
+                                                ¡Explora el lujo y la modernidad en Dubái! Admira rascacielos como el
+                                                Burj Khalifa, relájate en playas de arena dorada, disfruta de compras
+                                                inigualables y vive aventuras en el desierto. Dubái ofrece una
+                                                experiencia turística única llena de lujo, cultura y entretenimiento.
+                                                ¡Descubre todo lo que Dubái tiene para ofrecerte!
+                                            </span>
+                                        </div>
+                                        <img src="images/asia-img1.png" alt="">
+                                    </div>
+
+                                    <div class="carousel-item turquia">
+                                        <div class="modal-carousel-text">
+                                            <h1>Turquia</h1>
+                                            <span>¡Descubre la magia de Turquía! Desde los bazares de Estambul hasta las
+                                                ruinas de Éfeso, Turquía ofrece historia y cultura únicas. Relájate en
+                                                las aguas termales de Pamukkale, explora Capadocia y disfruta de la
+                                                gastronomía turca. Con paisajes impresionantes y hospitalidad
+                                                incomparable, Turquía es el destino perfecto para tus próximas
+                                                vacaciones. ¡Ven y vive la aventura de tu vida en Turquía!</span>
+                                        </div>
+                                        <img src="images/asia-img2.jpg" alt="">
+                                    </div>
+
+                                    <div class="carousel-item fuji">
+                                        <div class="modal-carousel-text">
+                                            <h1>Monte Fuji</h1>
+                                            <span>
+                                                ¡Experimenta la majestuosidad del Monte Fuji! A un corto viaje desde
+                                                Tokio, este icónico volcán te ofrece belleza y paisajes asombrosos.
+                                                Escala sus senderos, disfruta de vistas panorámicas y la tranquilidad de
+                                                la naturaleza. En cualquier época del año, el Monte Fuji ofrece una
+                                                experiencia inolvidable. ¡Ven y maravíllate con uno de los símbolos más
+                                                emblemáticos de Japón!</span>
+                                        </div>
+                                        <img src="images/asia-img3.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="prev-btn">&#10094; Anterior</button>
+                                    <button class="next-btn">Siguiente &#10095;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="serv-card med-oriente" data-aos="fade-left" data-aos-duration="1000">
+                        <p>Medio Oriente</p>
+                        <img src="images/oriente-img.jpg" alt="">
+                        <div class="serv-hide">
+                            <button class="open-oriente-modal">Ver mas<i style="font-weight: 900;"
+                                    class='bx bx-show'></i></button>
+                        </div>
+                        <div id="oriente-modal" class="modal oriente-modal">
+                            <div class="modal-content">
+                                <button class="close-oriente-btn"><i class='bx bxs-x-circle'></i></button>
+                                <div class="carrusel">
+                                    <div class="carousel-item egipto">
+                                        <div class="modal-carousel-text">
+                                            <h1>Egipto</h1>
+                                            <span>¡Embárcate en una aventura a través del tiempo en Egipto y sus
+                                                majestuosas pirámides! Explora las impresionantes pirámides de Giza y la
+                                                Esfinge, camina por los pasadizos de la Gran Pirámide y maravíllate con
+                                                su precisión arquitectónica. Con su rica herencia cultural y paisajes
+                                                deslumbrantes, Egipto te invita a vivir una experiencia única llena de
+                                                misterio y grandeza. ¡Ven y descubre las maravillas de las pirámides de
+                                                Egipto!
+                                            </span>
+                                        </div>
+                                        <img src="images/oriente-img1.webp" alt="">
+                                    </div>
+
+                                    <div class="carousel-item marruecos">
+                                        <div class="modal-carousel-text">
+                                            <h1>Marruecos</h1>
+                                            <span>
+                                                ¡Descubre la magia de Marruecos! Sumérgete en un mundo de colores
+                                                vibrantes, aromas exóticos y rica historia. Explora las medinas de
+                                                Marrakech y Fez, maravíllate con la arquitectura de palacios y
+                                                mezquitas, y disfruta del desierto del Sahara con sus dunas y noches
+                                                estrelladas. Saborea la gastronomía marroquí y siente la hospitalidad de
+                                                su gente. ¡Marruecos te espera para una aventura inolvidable llena de
+                                                encanto y tradición!</span>
+                                        </div>
+                                        <img src="images/oriente-img2.jpg" alt="">
+                                    </div>
+
+                                    <div class="carousel-item qatar">
+                                        <div class="modal-carousel-text">
+                                            <h1>Qatar</h1>
+                                            <span>¡Descubre la sofisticación y el encanto de Qatar! Disfruta del moderno
+                                                skyline de Doha, con sus rascacielos y el Museo de Arte Islámico.
+                                                Relájate en playas lujosas y explora mercados tradicionales como el Souq
+                                                Waqif. Vive la hospitalidad qatarí y la deliciosa gastronomía local.
+                                                Qatar ofrece una experiencia única de lujo, cultura y aventura. ¡Explora
+                                                la joya del Golfo!</span>
+                                        </div>
+                                        <img src="images/oriente-img3.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="prev-btn">&#10094; Anterior</button>
+                                    <button class="next-btn">Siguiente &#10095;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="serv-card centro-a" data-aos="fade-left" data-aos-duration="1000">
+                        <p>Centro América</p>
+                        <img src="images/centro_a-img.webp" alt="">
+                        <div class="serv-hide">
+                            <button class="open-centro-modal">Ver mas<i style="font-weight: 900;"
+                                    class='bx bx-show'></i></button>
+                        </div>
+                        <div id="centro-modal" class="modal centro-modal">
+                            <div class="modal-content">
+                                <button class="close-centro-btn"><i class='bx bxs-x-circle'></i></button>
+                                <div class="carrusel">
+                                    <div class="carousel-item costa">
+                                        <div class="modal-carousel-text">
+                                            <h1>Costa Rica</h1>
+                                            <span>
+                                                ¡Descubre el paraíso tropical de Costa Rica! Disfruta de su exuberante
+                                                belleza natural con selvas, playas y volcanes. Explora parques
+                                                nacionales, el Volcán Arenal y relájate en playas de arena blanca. Vive
+                                                aventuras como canopy y surf, y disfruta de la cálida hospitalidad
+                                                costarricense. Costa Rica ofrece una experiencia única de naturaleza y
+                                                relajación. ¡Ven y vive la magia de este oasis tropical!</span>
+                                        </div>
+                                        <img src="images/centro_a-img1.jpg" alt="">
+                                    </div>
+
+                                    <div class="carousel-item belice">
+                                        <div class="modal-carousel-text">
+                                            <h1>Belice</h1>
+                                            <span>
+                                                ¡Explora la historia de Belice en las ruinas de Caracol! Recorre el
+                                                sitio arqueológico maya con sus imponentes pirámides y estructuras
+                                                históricas. Admira la Gran Plaza, el Templo de los Mascarones y las
+                                                vistas panorámicas desde los templos. En la selva tropical, Caracol
+                                                ofrece una experiencia única de descubrimiento y aventura. ¡Revive la
+                                                historia maya en Belice!</span>
+                                        </div>
+                                        <img src="images/centro_a-img2.jpg" alt="">
+                                    </div>
+
+                                    <div class="carousel-item salvador">
+                                        <div class="modal-carousel-text">
+                                            <h1>El salvador</h1>
+                                            <span>
+                                                ¡Descubre el esplendor de Sunset Park en El Salvador! Disfruta de vistas
+                                                impresionantes al atardecer rodeado de vegetación y tranquilidad.
+                                                Recorre senderos, relájate en áreas de picnic y admira los paisajes
+                                                mientras cae el sol. Ideal para una escapada relajante con amigos o
+                                                familia, Sunset Park es perfecto para conectar con la naturaleza y crear
+                                                recuerdos inolvidables. ¡Ven y vive la magia del atardecer!</span>
+                                        </div>
+                                        <img src="images/centro_a-img3.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="prev-btn">&#10094; Anterior</button>
+                                    <button class="next-btn">Siguiente &#10095;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="national">
+                    <div class="nat-images">
+                        <div data-aos="fade-right" data-aos-duration="1000">
+                            <img src="images/turismo-arequipa.jpg" alt="">
+                        </div>
+                        <div data-aos="fade-left" data-aos-duration="1000">
+                            <img src="images/turismo-cusco.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="nat-text" data-aos="fade-left" data-aos-duration="1000">
+                        <span>Tambien en destinos nacionales en todas las ciudades</span>
+                        <p>Descubre la diversidad y riqueza de Perú con nuestras exclusivas ofertas de turismo
+                            nacional. Desde la majestuosidad de Machu Picchu hasta las playas paradisiacas de la costa,
+                            y
+                            desde la selva amazónica hasta las ciudades históricas de los Andes, te llevamos a cada
+                            rincón del país. Explora con nosotros y vive experiencias inolvidables en cada una de las
+                            maravillosas
+                            ciudades peruanas.</p>
+                        <a href="https://wa.me/+51955638001">Leer mas...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <div class="contact-container">
+                <div class="contact-form" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>Contactanos</h3>
+                    <p>Ponte en contacto con nuestro equipo para cualquier consulta o solicitud de reserva</p>
+                    <form action="https://formsubmit.co/tropicaltravelilo@hotmail.com" method="POST" target="_blank">
+                        <input type="text" name="Nombre" placeholder="Nombre" required>
+                        <input type="text" name="Apellido" placeholder="Apellido" required>
+                        <input type="number" name="Telefono" placeholder="Telefono" required>
+                        <input type="email" name="Email" placeholder="Correo electronico" required>
+                        <textarea name="Tema a tratar" placeholder="Dejanos un mensaje" required></textarea>
+                        <button class="form-button" type="submit">Enviar</button>
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+                        <input type="hidden" name="_captcha" value="false">
+                    </form>
+                </div>
+                <div class="contact-maps" data-aos="fade-left" data-aos-duration="1000">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.8004189428984!2d-76.99886482058986!3d-12.125803912715893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7f662897cf9%3A0x38192ceda783262a!2sJir%C3%B3n%20Ricardo%20Aicardi%20112%2C%20Santiago%20de%20Surco%2015039%2C%20Per%C3%BA!5e0!3m2!1ses!2snl!4v1722272555099!5m2!1ses!2snl"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="section">
+                <h3>Contacto</h3>
+                <p>Número de Contacto Principal, Atencion las 24h del dia: <a href="https://wa.me/955638001"
+                        target="_blank">+51 955638001 </a></p>
+                <p>Número de Oficina: <a href="https://wa.me/+961828315" target="_blank">+51 961828315</a></p>
+                <p>Email: <a href="mailto:tropicaltravelilo@hotmail.com">tropicaltravelilo@hotmail.com</a></p>
+                <p>Facebook: <a href="https://www.facebook.com/mariza.montenegro.1" target="_blank">Tropical Travel</a>
+                </p>
+            </div>
+            <div class="section">
+                <h3>Oficinas</h3>
+                <p>Oficina principal: Calle Moquegua 602-1, Ilo, Perú</p>
+                <p>Sucursal en Lima: Calle Ricardo Aicardi 112, Urbanización Chama-Surco, Lima</p>
+            </div>
+            <div class="section">
+                <h3>Sobre Nosotros</h3>
+                <p>Tropical Travel Agencia de Viajes y Turismo. Creada el 10 de junio de 1999</p>
+                <p>RUC: 20447566096</p>
+                <p>Cuenta corriente en soles y dólares</p>
+                <p>Transferencia a la cuenta vía BCP</p>
+            </div>
+            <div class="section">
+                <h3>Servicios</h3>
+                <p style="text-align: justify;">Venta de pasajes Aéreos Nacionales e internacionales,
+                    programas turísticos elaborados al gusto del cliente, cruceros, alquiler de autos,
+                    seguros de viajes</p>
+            </div>
+
+        </div>
+        <div class="ultimo">
+            <p>Todos los derechos reservados © 2022 Tropical Travel Agencia de Viajes y Turismo |<a
+                    href="https://anthonymontoyadv.github.io/Anthony-Developer/" target="_blank"> Creado
+                    por <strong>Anthony Montoya</strong></a></p>
+        </div>
+    </footer>
+
+    <div class="whatsapp-container">
+        <div class="whatsapp-message animate__animated animate__bounce">
+            Escríbeme
+        </div>
+        <a href="https://wa.me/51955638001" class="whatsapp-button" target="_blank">
+            <i class='bx bxl-whatsapp'></i>
+        </a>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="script.js"></script>
+
+    <script>
+        // Cargar las imágenes del localStorage al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            loadImages();
+        });
+
+        function loadImages() {
+            const images = JSON.parse(localStorage.getItem('carouselImages')) || [];
+            const carouselImages = document.getElementById('carousel-images');
+            carouselImages.innerHTML = ''; // Limpiar el carrusel antes de agregar las imágenes
+
+            images.forEach(src => {
+                const imgElement = document.createElement('img');
+                imgElement.src = src;
+                imgElement.className = 'banners';
+                carouselImages.appendChild(imgElement);
+            });
+        }
+
+        function saveImages(images) {
+            localStorage.setItem('carouselImages', JSON.stringify(images));
+        }
+
+        function addImage() {
+            const fileInput = document.getElementById('image-file');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const src = e.target.result;
+                    const imgElement = document.createElement('img');
+                    imgElement.src = src;
+                    imgElement.className = 'banners';
+                    document.getElementById('carousel-images').appendChild(imgElement);
+
+                    // Guardar la imagen en localStorage
+                    const images = JSON.parse(localStorage.getItem('carouselImages')) || [];
+                    images.push(src);
+                    saveImages(images);
+                };
+                reader.readAsDataURL(file);
+                fileInput.value = ''; // Limpiar el input después de agregar la imagen
+            } else {
+                alert('Por favor, selecciona un archivo de imagen.');
+            }
+        }
+
+        function removeImage() {
+            const carouselImages = document.getElementById('carousel-images');
+            const lastImage = carouselImages.querySelector('img:last-child');
+            if (lastImage) {
+                carouselImages.removeChild(lastImage);
+
+                // Eliminar la imagen del localStorage
+                const images = JSON.parse(localStorage.getItem('carouselImages')) || [];
+                images.pop();
+                saveImages(images);
+            } else {
+                alert('No hay imágenes para eliminar.');
+            }
+        }
+    </script>
+
+    <script>
+        function showFileName() {
+            const fileInput = document.getElementById('image-file');
+            const fileName = document.getElementById('file-name');
+            if (fileInput.files.length > 0) {
+                fileName.textContent = `Imagen seleccionada: ${fileInput.files[0].name}`;
+            } else {
+                fileName.textContent = 'Ningún archivo seleccionado';
+            }
+        }
+    </script>
+</body>
+
+</html>
